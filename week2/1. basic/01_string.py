@@ -23,27 +23,21 @@
 - 알파벳과 숫자만 남기고 소문자로 변환하세요
 - 문자열을 뒤집어서 비교하거나, 양 끝에서 시작해 중앙으로 이동하며 비교하세요
 """
+import re
 
 def is_palindrome(s):
-    """
-    문자열이 회문인지 판별하는 함수
+
+
+    lower_s = s.lower()
+    sub_lower_s = re.sub(r'[^\w]', '', lower_s)
+
+    if sub_lower_s == sub_lower_s[::-1]:
+        return True
+    else:
+        return False
+
     
-    Args:
-        s: 판별할 문자열
     
-    Returns:
-        bool: 회문이면 True, 아니면 False
-    """
-    # TODO: 알파벳과 숫자만 남기고 소문자로 변환하세요
-    # 힌트: isalnum() 메서드와 lower() 메서드 사용
-    pass
-    
-    # TODO: 정제된 문자열이 회문인지 확인하세요
-    # 방법1: 문자열을 뒤집어서 비교 ([::-1] 사용)
-    # 방법2: 양 끝 인덱스를 이용한 투 포인터 방식
-    pass
-    
-    #return False
 
 # 테스트 케이스
 if __name__ == "__main__":
