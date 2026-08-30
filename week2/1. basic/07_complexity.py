@@ -55,13 +55,20 @@ def find_duplicates_sorting(nums):
     
     # TODO: 배열을 정렬하세요 (nums.sort() 사용)
     pass
+
+    sort_nums = nums.sort()
     
     duplicates = []
     
     # TODO: 인접한 원소를 비교하여 중복 찾기
     # i와 i+1 원소가 같고, duplicates에 없으면 추가
     pass
+
+    for i in range(len(nums) - 1): # 7번 반복
+        if nums[i] == nums[i + 1] and nums[i] not in duplicates:
+            duplicates.append(nums[i])
     
+
     return duplicates
 
 def find_duplicates_hash(nums):
@@ -77,6 +84,12 @@ def find_duplicates_hash(nums):
     ## 이미 seen에 있으면 duplicates에 추가
     ## 없으면 seen에 추가
     pass
+
+    for i in range(len(nums)):
+        if nums[i] in seen:
+            duplicates.add(nums[i])
+        else:
+            seen.add(nums[i])
     
     return list(duplicates)
 
