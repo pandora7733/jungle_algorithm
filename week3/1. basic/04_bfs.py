@@ -49,11 +49,35 @@ def bfs(graph, start):
     ## 방문한 정점 집합
     pass
 
+    queue = deque()
+    queue.append(start)
+
+
     # TODO: 큐가 빌 때까지 반복
     ## 큐에서 정점 꺼내기
     ## 인접한 정점들 확인
     ## 방문하지 않은 정점이면 큐에 추가
     pass
+
+    while queue:
+        # 큐에서 가장 앞의 정점 꺼내기
+        current = queue.popleft()
+
+        # 이미 방문했다면 스킵
+        if current in visited:
+            continue
+
+        # 들어갔다 나옴
+        visited.append(current)
+
+        # 연결 정점 체크
+        for neighbor in graph[current]:
+
+            # 아직 방문하지 않았다면 큐에 추가
+            if neighbor not in visited:
+                queue.append(neighbor)
+        
+
     
     return visited
 
