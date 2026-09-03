@@ -42,11 +42,27 @@ def create_graph(vertices, edges, directed=False):
     """
     # TODO: 빈 그래프 초기화
     pass
+
+    # 그래프를 추가
+    graph = {}
+
+    for vertex in range(vertices):
+        graph[vertex] = []
     
     # TODO: 간선 추가
     ## 간선 추가 (u에서 v로)
     ## 무방향 그래프면 반대 방향도 추가
     pass
+
+    for u, v in edges:
+        # false는 무방향
+        if not directed:
+            graph[u].append(v)
+            graph[v].append(u)
+        # true는 방향
+        else:
+            graph[u].append(v)
+
     
     return graph
 
