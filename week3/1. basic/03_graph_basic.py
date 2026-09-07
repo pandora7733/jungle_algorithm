@@ -28,7 +28,7 @@
 - 무방향 그래프는 양방향 추가
 """
 
-def create_graph(vertices, edges, directed=False):
+def create_graph(vertices, edges, ):
     """
     그래프 생성 (인접 리스트)
     
